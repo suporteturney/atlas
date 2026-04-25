@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mentoria Atlas — Turney Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;600;700;800;900&family=Merriweather:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--p:#0E152F;--n:#060A1F;--br:#73452B;--ch:#C9A876;--be:#E8DEC4;--li:#FAF7F0;--cl:#EDD9A3}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--li);font-family:'Catamaran',sans-serif;color:var(--p);font-size:15px;line-height:1.6}
+.wrap{max-width:390px;margin:0 auto}
+.sec{padding:2rem 1.25rem}
+.sw{background:#fff}
+.sd{background:var(--p);color:var(--li)}
+.sn{background:var(--n);color:var(--li)}
+.sa{background:#1E1008;color:var(--li)}
+.hero{background:var(--n);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--br),var(--ch),var(--br));z-index:2}
+
+
+.hero-content{padding:2.75rem 1.25rem 2.25rem}
+.eyebrow{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--ch);margin-bottom:.75rem;display:flex;align-items:center;gap:8px}
+.eyebrow::before{content:'';display:block;width:20px;height:1px;background:var(--ch)}
+.hero-content h1{font-size:26px;font-weight:800;color:#fff;line-height:1.15;letter-spacing:-.5px;margin-bottom:.75rem}
+.hero-content h1 em{color:var(--ch);font-style:normal}
+.hero-intro{font-family:'Merriweather',serif;font-size:12.5px;font-weight:300;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:1.25rem}
+.hero-note{border-left:2px solid rgba(201,168,118,.5);padding:.7rem 1rem;background:rgba(201,168,118,.07)}
+.hero-note p{font-size:12px;color:var(--cl);line-height:1.65}
+.hero-note strong{font-weight:700;color:#fff}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:1.25rem}
+.stat{background:#fff;border:1px solid var(--be);padding:.9rem 1rem}
+.stat .n{font-size:24px;font-weight:800;color:var(--p);line-height:1;margin-bottom:3px}
+.stat .n span{font-size:13px;color:var(--br)}
+.stat .l{font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--br)}
+
+
+
+
+
+
+
+
+
+.tag{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--br);margin-bottom:6px}
+.tag.light{color:var(--ch)}
+h2{font-family:'Catamaran',sans-serif;font-size:20px;font-weight:800;color:var(--p);line-height:1.2;margin-bottom:6px}
+h2.light{color:#fff}
+.lead{font-family:'Merriweather',serif;font-size:12.5px;color:rgba(14,21,47,.58);line-height:1.8;margin-bottom:1.5rem}
+.lead.light{color:rgba(255,255,255,.5)}
+.rule{width:28px;height:2px;background:var(--ch);margin-bottom:1.5rem}
+.ac{background:#fff;border:1px solid var(--be);border-left:3px solid var(--ch);padding:1rem 1.1rem;margin-bottom:10px}
+.ac .who{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--br);background:rgba(115,69,43,.08);padding:2px 7px;margin-bottom:5px}
+.ac h3{font-size:13.5px;font-weight:700;color:var(--p);margin-bottom:4px}
+.ac p{font-size:12px;color:rgba(14,21,47,.55);line-height:1.6}
+.ac.inv{background:var(--p);border-color:var(--p);border-left-color:var(--ch)}
+.ac.inv .who{color:var(--ch);background:rgba(201,168,118,.12)}
+.ac.inv h3{color:var(--cl)}
+.ac.inv p{color:rgba(255,255,255,.5)}
+.cta-c{margin-top:1.5rem;background:var(--li);border:1px solid var(--be);padding:1.1rem}
+.cta-c p{font-family:'Merriweather',serif;font-size:12px;font-style:italic;color:rgba(14,21,47,.55);line-height:1.65;margin-bottom:12px}
+.btn-wa{display:flex;align-items:center;justify-content:center;gap:8px;background:#25D366;color:#fff;font-family:'Catamaran',sans-serif;font-size:13px;font-weight:700;padding:11px 16px;text-decoration:none}
+.btn-wa svg{width:16px;height:16px;flex-shrink:0}
+.step{display:flex;gap:16px}
+.step-a{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.step-n{width:36px;height:36px;background:var(--ch);color:var(--n);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step-ln{width:1px;flex:1;min-height:12px;background:rgba(201,168,118,.25);margin-top:4px}
+.step-b{padding-bottom:26px;flex:1}
+.step-b .ph{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ch);margin-top:7px;margin-bottom:3px}
+.step-b .nm{font-size:16px;font-weight:800;color:#fff;line-height:1.2;margin-bottom:10px}
+.it{display:flex;align-items:flex-start;gap:8px;margin-bottom:7px}
+.dot{width:5px;height:5px;background:var(--ch);border-radius:50%;margin-top:7px;flex-shrink:0}
+.it span{font-size:13px;color:rgba(255,255,255,.68);line-height:1.55}
+.bg{display:inline-block;font-size:10px;font-weight:700;color:var(--ch);background:rgba(201,168,118,.12);padding:1px 6px;margin-left:4px}
+.al-in{border-left:3px solid var(--ch);background:rgba(255,255,255,.05);padding:1.1rem}
+.al-tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ch);margin-bottom:8px}
+.al-it{display:flex;align-items:flex-start;gap:8px;margin-bottom:7px}
+.al-d{width:5px;height:5px;background:var(--ch);border-radius:50%;margin-top:7px;flex-shrink:0}
+.al-it span{font-size:13px;color:rgba(255,255,255,.7);line-height:1.55}
+.al-it.hl span{color:rgba(255,255,255,.92);font-weight:600}
+.al-it.hl .al-d{background:var(--cl)}
+.chk{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid rgba(232,222,196,.25)}
+.chk-b{width:19px;height:19px;border:1.5px solid var(--ch);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.chk-b svg{width:9px;height:9px}
+.chk span{font-size:13.5px;color:rgba(255,255,255,.72);line-height:1.55}
+.rc{background:var(--li);border:1px solid var(--be);border-top:3px solid var(--br);padding:1rem 1.1rem;margin-bottom:10px}
+.rc strong{display:block;font-size:14px;font-weight:700;color:var(--p);margin-bottom:3px}
+.rc p{font-size:12px;color:rgba(14,21,47,.52);line-height:1.55}
+footer{background:var(--n);padding:2rem 1.25rem;border-top:1px solid rgba(201,168,118,.15)}
+.ft-logo{font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--ch);margin-bottom:4px}
+.ft-sub{font-family:'Merriweather',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,.28);margin-bottom:1.5rem}
+.ft-c{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,118,.18);padding:1rem;margin-bottom:1rem}
+.ft-c p{font-size:12px;color:rgba(255,255,255,.42);line-height:1.6;margin-bottom:10px}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:1rem}
+.bs{display:flex;align-items:center;justify-content:center;gap:7px;padding:11px 8px;font-family:'Catamaran',sans-serif;font-size:12px;font-weight:700;letter-spacing:.5px;text-decoration:none;color:var(--cl);border:1px solid rgba(201,168,118,.28);background:rgba(255,255,255,.03)}
+.bs svg{width:15px;height:15px;flex-shrink:0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">Turney Academy · 2026</div>
+    <h1>Mentoria Atlas<br><em>Como funciona<br>sua jornada</em></h1>
+    <p class="hero-intro">Este guia explica com clareza tudo o que você acessa, quais etapas vai percorrer e o que se espera de você ao longo do programa.</p>
+    <div class="hero-note">
+      <p><strong>Andressa Bordon</strong> participa ativamente dos hotseats, analisando seu caso ao vivo semana a semana. As demais mentoras e tutoras estão no grupo geral acompanhando suas dúvidas.</p>
+    </div>
+  </div>
+</section>
+<section class="sec">
+  <div class="tag">Visão geral</div>
+  <h2>O que está incluído</h2>
+  <div class="rule"></div>
+  <p class="lead">A Atlas reúne acompanhamento em grupo, sessões individuais, revisão de materiais e ferramentas práticas — tudo organizado em etapas progressivas.</p>
+  <div class="stats">
+    <div class="stat"><div class="n">6<span>meses</span></div><div class="l">Plataforma de aulas</div></div>
+    <div class="stat"><div class="n">4<span>etapas</span></div><div class="l">Método progressivo</div></div>
+    <div class="stat"><div class="n">1:1</div><div class="l">Sessão individual</div></div>
+    <div class="stat"><div class="n">5x<span>/sem</span></div><div class="l">Suporte disponível</div></div>
+  </div>
+</section>
+
+<section class="sec sw">
+  <div class="tag">Seus acessos</div>
+  <h2>O que você encontra no programa</h2>
+  <div class="rule"></div>
+
+  <div class="ac">
+    <div class="who">Com Andressa Bordon</div>
+    <h3>Hotseats semanais</h3>
+    <p>Andressa analisa o seu caso ao vivo, individualmente, dentro do grupo — com direcionamento prático e personalizado para a sua situação específica.</p>
+  </div>
+  <div class="ac">
+    <div class="who">Com Mentora de Carreiras</div>
+    <h3>Tutoria semanal em grupo</h3>
+    <p>Sessão coletiva para acompanhar seu progresso, tirar dúvidas estratégicas e orientar o andamento da mentoria.</p>
+  </div>
+  <div class="ac">
+    <div class="who">Com Mentora de Carreiras</div>
+    <h3>Sessão individual de estratégia</h3>
+    <p>Encontro 1:1 para definir sua estratégia de carreira internacional com base no seu perfil e momento profissional. Acontece após as etapas iniciais.</p>
+  </div>
+  <div class="ac">
+    <div class="who">Com Mentora Comportamental</div>
+    <h3>Devolutiva de perfil comportamental</h3>
+    <p>Análise ao vivo do seu perfil para embasar seu posicionamento e autoconhecimento profissional.</p>
+  </div>
+  <div class="ac">
+    <h3>Roadmap personalizado</h3>
+    <p>Documento com sua estratégia e próximos passos, entregue em até 5 dias úteis após a sessão individual.</p>
+  </div>
+  <div class="ac">
+    <h3>Revisão de CV e cover letter</h3>
+    <p>Correção e adequação dos seus materiais aos padrões do mercado remoto internacional.</p>
+  </div>
+  <div class="ac">
+    <h3>Otimização de LinkedIn e Upwork</h3>
+    <p>Ajuste estratégico dos seus perfis para maior visibilidade e atração de recrutadores.</p>
+  </div>
+  <div class="ac">
+    <h3>Templates prontos para networking</h3>
+    <p>Mensagens modelo para abordar recrutadores e profissionais no LinkedIn de forma estratégica e natural.</p>
+  </div>
+  <div class="ac">
+    <h3>IAs para entrevista e currículo</h3>
+    <p>Agente Turney disponível para simulação de entrevistas e otimização dos seus materiais profissionais.</p>
+  </div>
+  <div class="ac inv">
+    <div class="who">Horário de Brasília · BRT</div>
+    <h3>Grupo VIP individual · Seg–Sex · 9h–19h</h3>
+    <p>Canal direto para suas dúvidas ao longo do programa. Andressa e as demais mentoras e tutoras estão no grupo geral e acompanham o que você posta, independente do seu fuso horário.</p>
+  </div>
+  <div class="ac">
+    <h3>Comunidade Turney Exclusive</h3>
+    <p>Vagas, atualizações do mercado remoto internacional e networking com profissionais da área.</p>
+  </div>
+  <div class="ac">
+    <h3>Plataforma de aulas · 6 meses</h3>
+    <p>Acesso completo ao conteúdo da Atlas com módulos progressivos e conteúdos bônus incluídos.</p>
+  </div>
+
+  <div class="cta-c">
+    <p>Dúvidas sobre agendamentos, plataforma ou próximos passos? Fale direto com a Tutora Turney.</p>
+    <a class="btn-wa" href="https://wa.me/5548991887065?text=Ol%C3%A1%2C+sou+mentorada+Atlas+e+preciso+de+ajuda." target="_blank">
+      <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.528 5.858L.057 23.5l5.797-1.522A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.213-3.44.903.92-3.352-.234-.374A9.818 9.818 0 1112 21.818z"/></svg>
+      Falar com a Tutora Turney
+    </a>
+  </div>
+</section>
+
+<section class="sec sn">
+  <div class="tag light">Sua jornada</div>
+  <h2 class="light">As 4 etapas da mentoria</h2>
+  <p class="lead light">Cada etapa tem ações definidas, entregáveis claros e pelo menos uma mentora presente.</p>
+  <div class="rule"></div>
+
+  <div class="step"><div class="step-a"><div class="step-n">01</div><div class="step-ln"></div></div>
+    <div class="step-b">
+      <div class="ph">Início</div><div class="nm">Boas-vindas e integração</div>
+      <div class="it"><div class="dot"></div><span>Entrada no grupo VIP e grupo geral</span></div>
+      <div class="it"><div class="dot"></div><span>Preenchimento do formulário de reconhecimento</span></div>
+      <div class="it"><div class="dot"></div><span>Agendamento da call de onboarding</span></div>
+    </div>
+  </div>
+
+  <div class="step"><div class="step-a"><div class="step-n">02</div><div class="step-ln"></div></div>
+    <div class="step-b">
+      <div class="ph">Fundação</div><div class="nm">Diagnóstico e posicionamento</div>
+      <div class="it"><div class="dot"></div><span>Call de reconhecimento <span class="bg">Mentora de Carreiras</span></span></div>
+      <div class="it"><div class="dot"></div><span>Entrada na comunidade Turney Exclusive</span></div>
+      <div class="it"><div class="dot"></div><span>Teste comportamental por e-mail</span></div>
+      <div class="it"><div class="dot"></div><span>Devolutiva de perfil ao vivo <span class="bg">Mentora Comportamental</span></span></div>
+      <div class="it"><div class="dot"></div><span>Início nos hotseats <span class="bg">Andressa Bordon</span></span></div>
+    </div>
+  </div>
+
+  <div class="step"><div class="step-a"><div class="step-n">03</div><div class="step-ln"></div></div>
+    <div class="step-b">
+      <div class="ph">Direção</div><div class="nm">Estratégia de carreira</div>
+      <div class="it"><div class="dot"></div><span>Conclusão das aulas iniciais e participação mínima em hotseats</span></div>
+      <div class="it"><div class="dot"></div><span>Sessão estratégica individual <span class="bg">Mentora de Carreiras</span></span></div>
+      <div class="it"><div class="dot"></div><span>Definição da estratégia e área de aplicação</span></div>
+      <div class="it"><div class="dot"></div><span>Entrega do roadmap em até 5 dias úteis</span></div>
+      <div class="it"><div class="dot"></div><span>Ajustes em CV, cover letter e LinkedIn</span></div>
+    </div>
+  </div>
+
+  <div class="step"><div class="step-a"><div class="step-n">04</div></div>
+    <div class="step-b">
+      <div class="ph">Mercado</div><div class="nm">Execução contínua</div>
+      <div class="it"><div class="dot"></div><span>Finalizar aulas e conteúdos bônus da plataforma</span></div>
+      <div class="it"><div class="dot"></div><span>Assistir conteúdos sobre Upwork e posicionamento</span></div>
+      <div class="it"><div class="dot"></div><span>Buscar vagas e candidatar-se todos os dias</span></div>
+      <div class="it"><div class="dot"></div><span>Fazer networking com os templates disponibilizados</span></div>
+      <div class="it"><div class="dot"></div><span>Simular entrevistas com o Agente Turney regularmente</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sa">
+  <div class="tag light">Ponto importante</div>
+  <h2 class="light" style="margin-bottom:6px;">Encare como um segundo trabalho</h2>
+  <div class="rule"></div>
+  <p class="lead light">O método está aqui. A execução é sua. Quem avança mais rápido é quem mantém ação diária, mesmo nos dias difíceis.</p>
+  <div class="al-in">
+    <div class="al-tag">O que isso significa na prática</div>
+    <div class="al-it"><div class="al-d"></div><span>Buscar vagas todos os dias, sem exceção</span></div>
+    <div class="al-it"><div class="al-d"></div><span>Realizar candidaturas de forma consistente</span></div>
+    <div class="al-it"><div class="al-d"></div><span>Fazer networking ativo usando os templates prontos</span></div>
+    <div class="al-it"><div class="al-d"></div><span>Simular entrevistas com o Agente Turney regularmente</span></div>
+    <div class="al-it hl" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(201,168,118,.15)"><div class="al-d"></div><span>Quem trata a mentoria como prioridade chega mais rápido ao resultado.</span></div>
+  </div>
+</section>
+
+<section class="sec sd">
+  <div class="tag light">Seu papel na mentoria</div>
+  <h2 class="light">O que se espera de você</h2>
+  <div class="rule"></div>
+  <div class="chk"><div class="chk-b"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,2.5" stroke="#C9A876" stroke-width="1.5" fill="none"/></svg></div><span>Participar das sessões semanais com presença ativa</span></div>
+  <div class="chk"><div class="chk-b"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,2.5" stroke="#C9A876" stroke-width="1.5" fill="none"/></svg></div><span>Concluir as aulas e realizar os testes indicados na plataforma</span></div>
+  <div class="chk"><div class="chk-b"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,2.5" stroke="#C9A876" stroke-width="1.5" fill="none"/></svg></div><span>Aplicar as devolutivas recebidas nos seus materiais profissionais</span></div>
+  <div class="chk"><div class="chk-b"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,2.5" stroke="#C9A876" stroke-width="1.5" fill="none"/></svg></div><span>Seguir o roadmap e encarar a mentoria como um segundo trabalho</span></div>
+  <div class="chk"><div class="chk-b"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,2.5" stroke="#C9A876" stroke-width="1.5" fill="none"/></svg></div><span>Buscar vagas e realizar candidaturas todos os dias</span></div>
+  <div class="chk"><div class="chk-b"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,2.5" stroke="#C9A876" stroke-width="1.5" fill="none"/></svg></div><span>Fazer networking estratégico usando os templates disponibilizados</span></div>
+</section>
+
+<section class="sec sw">
+  <div class="tag">Ao final do processo</div>
+  <h2>O que você constrói</h2>
+  <div class="rule"></div>
+  <div class="rc"><strong>Clareza sobre os próximos passos</strong><p>Você saberá exatamente para onde ir e o que fazer, sem depender de achismos ou decisões por impulso.</p></div>
+  <div class="rc"><strong>Estratégia de carreira definida</strong><p>Com base no seu perfil, área-alvo e contexto do mercado remoto internacional.</p></div>
+  <div class="rc"><strong>Materiais profissionais mais competitivos</strong><p>CV, cover letter, LinkedIn e Upwork revisados e alinhados com os padrões do mercado.</p></div>
+  <div class="rc"><strong>Preparo real para entrevistas</strong><p>Simulações práticas e repertório para atuar com segurança no processo seletivo internacional.</p></div>
+  <div class="rc"><strong>Capacidade de execução autônoma</strong><p>Você sai da mentoria sabendo o que fazer, como medir seu progresso e como continuar avançando.</p></div>
+</section>
+
+<footer>
+  <div class="ft-logo">Turney Academy</div>
+  <div class="ft-sub">Método. Clareza. Ação.</div>
+  <div class="ft-c">
+    <p>Dúvidas sobre sua jornada, agendamentos ou próximos passos? Fale diretamente com a Tutora Turney.</p>
+    <a class="btn-wa" href="https://wa.me/5548991887065?text=Ol%C3%A1%2C+sou+mentorada+Atlas+e+preciso+de+ajuda." target="_blank">
+      <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.528 5.858L.057 23.5l5.797-1.522A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.213-3.44.903.92-3.352-.234-.374A9.818 9.818 0 1112 21.818z"/></svg>
+      Falar com a Tutora Turney
+    </a>
+  </div>
+  <div class="tag light" style="margin-bottom:8px;">Siga a Turney Academy</div>
+  <div class="sg">
+    <a class="bs" href="https://www.linkedin.com/company/turneyacademy/" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" stroke="#C9A876" stroke-width="1.5"/><path d="M7 10v7M7 7v.5" stroke="#C9A876" stroke-width="1.5" stroke-linecap="round"/><path d="M11 17v-4c0-1.5 1-2 2-2s2 .5 2 2v4M11 10v7" stroke="#C9A876" stroke-width="1.5" stroke-linecap="round"/></svg>
+      LinkedIn
+    </a>
+    <a class="bs" href="https://www.instagram.com/turneyacademy/" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#C9A876" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="#C9A876" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#C9A876"/></svg>
+      Instagram
+    </a>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
